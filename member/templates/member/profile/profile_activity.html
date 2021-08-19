@@ -1,0 +1,40 @@
+{% load i18n %}
+
+<h3 class='header-font'>
+  {% blocktrans %}Activity Between {{ period_start|date:'M d' }} to {{ period_end|date:'M d' }}:{% endblocktrans %}
+  {{ days_this_period | length}} {% if allowance %} {% trans "of" %} {{ allowance }} {% trans "Days" %}{% endif %}
+  {% if days_this_period != billable %}
+    ({{ billable }} billable)
+  {% endif %}
+</h3>
+
+{% if days_this_period %}
+  <table>
+    <thead>
+      <tr>
+        {% if show_user %}
+          <th class='sub-th'>{% trans "User" %}</th>
+        {% endif %}
+        <th class='sub-th'>{% trans "Date" %}</th>
+        <th class='sub-th' align="center">{% trans "Billable" %}</th>
+        {% if show_paid %}
+          <th class='sub-th'>{% blocktrans %}Paid by{% endblocktrans %}</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+        {% for d in days_this_period %}
+          <tr class="{% cycle 'row-even' 'row-odd' %}">
+            {% if show_user %}
+              <td>{{ d.user.get_full_name }}
+            {% endif %}
+            <td nowrap class="date-cell">{{ d.visit_date|date:"M d, Y" }}</td>
+            <td align="center">{{ d.payment }}</td>
+            {% if show_paid %}
+              <td>{% if d.paid_by %}{{ d.paid_by.get_full_name }}{% endif %}</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endif %}

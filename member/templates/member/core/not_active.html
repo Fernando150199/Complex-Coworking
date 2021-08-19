@@ -1,0 +1,25 @@
+{% extends "member/base.html" %}
+{% load i18n %}
+{% load settings_value %}
+
+{% block content %}
+	<h3 class='header-font' style='text-align:center;'>{% blocktrans %}Active Membership Required{% endblocktrans %}</h3>
+	<div class="letter">
+		<p>{% blocktrans %}We're sorry, you are not currently an active member.{% endblocktrans %}  </p>
+
+		<p>
+			{% blocktrans %}Certain features in Nadine require an active membership to access.  If you are not a member,
+			or your membership has expired, you will have limited access to this system. You can view your membership
+      and your history by going to {% endblocktrans %}
+			<a href="{% url 'member:profile:redirect' %}">{% trans "your profile" %}</a>.
+      {% blocktrans %}If you have any questions feel free to send an email to {% endblocktrans %}
+			<a href="mailto:{% settings_value 'STAFF_EMAIL_ADDRESS' %}">{% settings_value 'STAFF_EMAIL_ADDRESS' %}</a>
+			{% blocktrans %}or just stop by the front desk. {% endblocktrans %}
+		</p>
+
+		<p>
+			{% trans "Sincerely," %}<br>
+			The {% settings_value 'SITE_NAME' %} Team
+		</p>
+	</div>
+{% endblock %}

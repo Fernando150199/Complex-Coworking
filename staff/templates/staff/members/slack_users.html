@@ -1,0 +1,26 @@
+{% extends "staff/members/base.html" %}
+
+{% block sub-title %} Slack Users{% endblock %}
+
+{% block content%}
+
+<h4>Expired Members still in Slack ({{ expired_users|length }})</h4>
+<ul>
+{% for u in expired_users %}
+	<li>
+		<strong><a href="{% url 'staff:members:search' %}?terms={{ u.email }}">{{ u.real_name }}</a></strong>:
+		{{ u.email }}
+	</li>
+{% endfor %}
+</ul>
+
+<h4>Active Members not in Slack ({{ non_slack_users|length }})</h4>
+<ul>
+{% for u in non_slack_users %}
+	<li>
+		<strong><a href="{% url 'staff:members:detail' u.username %}">{{ u.get_full_name }}</a></strong>
+	</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
