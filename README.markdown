@@ -1,43 +1,107 @@
+## Sistema de Gestão para Empresa de Coworking
+Este é um sistema completo desenvolvido para uma empresa de coworking, projetado para gerenciar espaços, reservas de salas, pagamentos e membros. O sistema utiliza JavaScript para o frontend e Python para o backend, proporcionando uma solução integrada e robusta.
+
+## Funcionalidades
+Gestão de Espaços: Cadastro e visualização de espaços disponíveis para aluguel.
+Reservas de Salas: Sistema de reserva de salas de reunião e espaços de trabalho compartilhados.
+Gestão de Membros: Cadastro de novos membros, gestão de informações e acesso aos espaços.
+Pagamentos: Processamento de pagamentos de aluguel de espaços e serviços adicionais.
+Relatórios: Geração de relatórios sobre ocupação, receitas, despesas, entre outros.
+Autenticação e Segurança: Controle de acesso seguro através de autenticação de usuário.
+
+##Tecnologias Utilizadas
+Frontend (JavaScript):
+
+React.js
+Redux (ou Context API para gerenciamento de estado)
+HTML/CSS
+Bootstrap (ou outro framework de UI)
+Backend (Python):
+
+Flask (ou Django para uma solução mais robusta)
+SQLAlchemy (para ORM)
+Flask-RESTful (ou outra biblioteca para criação de APIs RESTful)
+SQLite (ou outro banco de dados relacional, como PostgreSQL)
+
+##Pré-requisitos
+Antes de começar, certifique-se de ter os seguintes requisitos instalados:
+
+Node.js e npm (para o frontend em JavaScript)
+Python 3.x (para o backend em Python)
+Flask e outras dependências Python especificadas no requirements.txt
+Um banco de dados SQL (como SQLite, PostgreSQL, etc.)
+
+## Instalação e Execução
+Frontend
+Instale as dependências:
+
+bash
+cd frontend
+npm install
+Inicie o servidor de desenvolvimento:
+
+bash
+npm start
+O frontend estará disponível em http://localhost:3000.
+
+Backend
+Crie um ambiente virtual (recomendado):
+
+bash
+cd backend
+python -m venv venv
+source venv/bin/activate   # no Windows use `venv\Scripts\activate`
+
+## Instale as dependências:
+
+bash
+pip install -r requirements.txt
+
+## Inicie o servidor Flask:
+
+bash
+python app.py
+O servidor estará rodando em http://localhost:5000.
+
+Estrutura do Projeto
+lua
+Copiar código
+/
+- -- frontend/          # Código-fonte JavaScript (frontend)
+-   |-- public/
+-   |-- src/
+-    |-- package.json
+-    |-- README.md
+- -- backend/           # Código-fonte Python (backend)
+-    |-- app.py         # Ponto de entrada do servidor Flask
+-    |-- models.py      # Definição de modelos SQLAlchemy
+-    |-- api/
+-    |-- static/
+-   |-- templates/
+-    |-- venv/          # Ambiente virtual Python (opcional)
+-     |-- requirements.txt
+-    |-- README.md
+- -- database/          # Arquivos de banco de dados (SQLite, PostgreSQL, etc.)
+- -- README.md          # Documentação do projeto (você está aqui)
+- -- LICENSE            # Arquivo de licença
+- -- .gitignore         # Arquivo gitignore
+  
+## Contribuição
+Contribuições são bem-vindas! Aqui estão algumas ideias de como você pode contribuir:
+
+Implementar novas funcionalidades, como integração com sistemas de pagamento, calendário de eventos, etc.
+Melhorar a interface do usuário para uma experiência mais intuitiva e eficiente.
+Otimizar o desempenho do backend e frontend.
+
+## Para contribuir:
+
+Faça um fork do projeto
+Crie uma branch com sua feature (git checkout -b feature/nova-feature)
+Faça commit das suas mudanças (git commit -am 'Adiciona nova feature')
+Faça push para a branch (git push origin feature/nova-feature)
+Abra um Pull Request
+
+## Licença
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 
-# Complex
-
-Complex is an open source software project designed and built for use at Office Nomads to help handle daily operations of the space from both the staff and member sides of the house. Nadine has been in continuous use and development since 2007. We are working hard to make Nadine easier to install, configure, deploy, and update.
-
-
-## Release Notes
-
-- Django 3.1 and Python 3.8 recommended
-- Now licensed under the AGPLV3 Open Source License
-- Nextcloud, Rocket.Chat, and elocky integrations
-- French, Spanish, and German language translations
-- Xero Oauth2.0 Upgrade
-
-## Integrations
-- [Xero](https://xero.com)
-- [MailChimp](https://mailchimp.com)
-- [Slack](https://slack.com/)
-- [Nextcloud](https://nextcloud.com)
-- [Rocket.Chat](https://rocket.chat)
-- [elocky](https://elocky.com)
-- [HID Edge Evo](https://www.hidglobal.com/products/controllers/edge-evo)
-
-## License & Copyright
-
-Copyright 2021 Office Nomads LLC ([https://officenomads.com/](https://officenomads.com))
-
-Licensed under the GNU Affero General Public License v3.0 (the "License");
-you may not use this software except in compliance with the License.
-
-You may obtain a copy of the License at [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/)
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-
-See the License for the specific language governing permissions and limitations under the License.
-
-For questions regarding the use or redistribution of this software please contact the primary author, [Jacob Sayles](jacob@officenomads.com).
-
-## Image Attribution
-
-- Camera icon by Alfa Design from the Noun Project
-- Estimate by xwoodhillx from the Noun Project  
