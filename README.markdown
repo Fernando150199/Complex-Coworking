@@ -79,7 +79,7 @@ Copiar código
 -    |-- static/
 -   |-- templates/
 -    |-- venv/          # Ambiente virtual Python (opcional)
--     |-- requirements.txt
+- |-- requirements.txt
 -    |-- README.md
 - -- database/          # Arquivos de banco de dados (SQLite, PostgreSQL, etc.)
 - -- README.md          # Documentação do projeto (você está aqui)
